@@ -8,5 +8,10 @@ public interface IElectronicsService
 
     public Iterable<Electronics> registerMultiGadgetInfo(Iterable<Electronics> gadgets);
 
+    public Long gadgetsCount();
+
+    public Boolean checkgadgetAvailability(Integer id);
+
+    public Iterable<Electronics>getAllElectronicsInfo();
 
 }

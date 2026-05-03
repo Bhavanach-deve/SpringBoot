@@ -17,9 +17,9 @@ public class LayeredApproachApplication {
 		ConfigurableApplicationContext container=SpringApplication.run(LayeredApproachApplication.class, args);
 		ElectricService service=container.getBean(ElectricService.class);
 
-//		String status=service.registerGadgetInfo(new Electronics(20000.00,"Television","Videocon"));
-//
-//		System.out.println(status);
+		String status=service.registerGadgetInfo(new Electronics(20000.00,"Television","Videocon"));
+
+		System.out.println(status);
 
 		Electronics e1=new Electronics(29000.00,"Television","LG");
 		Electronics e2=new Electronics(27000.00,"Television","Sony");
@@ -31,7 +31,15 @@ public class LayeredApproachApplication {
 		gadgets.add(e3);
 		service.registerMultiGadgetInfo(gadgets).forEach(v-> System.out.println(v));
 
+		Long count=service.gadgetsCount();
+		System.out.println("No of Televisions availabe: "+count);
 
+		int id=4;
+		Boolean status1=service.checkgadgetAvailability(id);
+		if(status1)
+			System.out.println("Television with id"+id+"is availabe");
+		else
+			System.out.println("Television with id "+id+" is not availabe");
 
 
 	}

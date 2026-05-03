@@ -28,4 +28,19 @@ public class ElectricService implements IElectronicsService
 
     }
 
+    @Override
+    public Long gadgetsCount() {
+        return repo.count();
+    }
+
+    @Override
+    public Boolean checkgadgetAvailability(Integer id) {
+        return repo.existsById(id);
+    }
+
+    @Override
+    public Iterable<Electronics> getAllElectronicsInfo() {
+        return repo.findAll();
+    }
+
 }

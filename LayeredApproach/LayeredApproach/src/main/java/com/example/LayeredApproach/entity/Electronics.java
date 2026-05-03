@@ -55,4 +55,14 @@ public class Electronics
     public void setCost(double cost) {
         this.cost = cost;
     }
+
+    @Override
+    public String toString() {
+        return "Electronics{" +
+                "id=" + id +
+                ", gadgetname='" + gadgetname + '\'' +
+                ", brandName='" + brandName + '\'' +
+                ", cost=" + cost +
+                '}';
+    }
 }
